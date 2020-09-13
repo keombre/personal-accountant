@@ -62,6 +62,13 @@ namespace PersonalAccountant
             })
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.SlidingExpiration = true;
+            });
+
             services.AddRazorPages();
 
             services.AddScoped<TransactionService>();
@@ -95,7 +102,7 @@ namespace PersonalAccountant
                 endpoints.MapRazorPages();
             });
 
-            UpdateDatabase(app);
+            //UpdateDatabase(app);
         }
 
         private static void UpdateDatabase(IApplicationBuilder app)
