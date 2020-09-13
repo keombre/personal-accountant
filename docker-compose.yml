@@ -3,6 +3,8 @@ version: '3.4'
 services:
   personalaccountant:
     image: ${DOCKER_REGISTRY-}personalaccountant
+    environment:
+      ConnectionStrings__DefaultConnection: Server=database;Database=master;User=sa;Password=GW9nFvT4FXDymRAGQnXvFkEmqDuGd7tF;MultipleActiveResultSets=true
     build:
       context: .
       dockerfile: PersonalAccountant/Dockerfile
