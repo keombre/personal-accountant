@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PersonalAccountant.Migrations
+namespace PersonalAccountant.Data.Migrations
 {
     public partial class Initial : Migration
     {
@@ -52,8 +52,8 @@ namespace PersonalAccountant.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    Argb = table.Column<int>(nullable: false)
+                    Name = table.Column<string>(nullable: false),
+                    ColorHex = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -175,7 +175,8 @@ namespace PersonalAccountant.Migrations
                     Date = table.Column<DateTime>(nullable: false),
                     Ammount = table.Column<int>(nullable: false),
                     TypeId = table.Column<int>(nullable: true),
-                    UserId = table.Column<string>(nullable: true)
+                    UserId = table.Column<string>(nullable: true),
+                    Note = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -7,8 +7,6 @@
 
 <h1>Edit</h1>
 
-<h4>TypeEntity</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
@@ -21,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="TypeEntity.ColorHex" class="control-label"></label>
-                <input asp-for="TypeEntity.ColorHex" class="form-control" />
+                <input type="color" asp-for="TypeEntity.ColorHex" class="custom-select" />
                 <span asp-validation-for="TypeEntity.ColorHex" class="text-danger"></span>
             </div>
             <div class="form-group">
