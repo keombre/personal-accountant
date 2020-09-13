@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  personalaccountant:
+    image: ${DOCKER_REGISTRY-}personalaccountant
+    build:
+      context: .
+      dockerfile: PersonalAccountant/Dockerfile
+    depends_on:
+      - database
+
+  database:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: "GW9nFvT4FXDymRAGQnXvFkEmqDuGd7tF"
+      ACCEPT_EULA: "Y"
